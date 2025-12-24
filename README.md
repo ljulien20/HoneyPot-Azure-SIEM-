@@ -18,6 +18,7 @@ A SIEM Cloud project was created today using Azure cloud infrastructure. In this
 - <b>Windows 11</b> 
 - <b>AZURE</b>
 - <b>Micorsoft Sentinel</b>
+- <b>Virtual Machines</b>
 
 
 <h2>Program walk-through:</h2>
