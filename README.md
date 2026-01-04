@@ -1,5 +1,5 @@
          
-<h1>HoneyPort Azure Cloud Project</h1>
+<h1>HoneyPot Azure Cloud Project</h1>
 
 
 <h2>Description</h2>
