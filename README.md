@@ -65,6 +65,7 @@ You can find KQL under the logs tab, where you can search all data within your v
 <br />
 You will create a workbook with your KQL queries and input them to make a map of all attacks in the world:  <br/>
 <img src="https://cdn.discordapp.com/attachments/1445251151896248323/1450316287938134116/Screenshot_2025-12-15_203735.png?ex=694bfb0c&is=694aa98c&hm=d0fca01220dc3911d181f4d6858efc4526e4270b3bafc0355096e05ec90690b0" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+
 I added a map.json code that inputs all queries into a map to be easier to read and can be used for reports. This is the completed VM attack map worldwide within 24 hours of being open:  <br/>
 <img src="https://cdn.discordapp.com/attachments/1445251151896248323/1450321333782319135/Screenshot_2025-12-15_204207.png?ex=694bffbf&is=694aae3f&hm=ff47d10726f255528d1ffdad4dc2964bbde1980ebc28ed2cd32f9853748821f6&" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <img src="https://cdn.discordapp.com/attachments/1445251151896248323/1450321334373453855/Screenshot_2025-05-13_082456.png?ex=694bffbf&is=694aae3f&hm=cd08fe318f40583c9dd97c1871954fc5560c36805f7474dcde0dfe4e21d12ddd&" height="80%" width="80%" alt="Disk Sanitization Steps"/>
