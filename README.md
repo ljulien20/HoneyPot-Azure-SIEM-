@@ -24,51 +24,50 @@ A SIEM Cloud project was created today using Azure cloud infrastructure. In this
 <h2>Program walk-through:</h2>
 
 <p align="center">
-First,  I added a resource group to the subscription that has to be made to use Azure. Resource groups are a logical container used to organize and manage related cloud resources as a single unit. It allows administrators and developers to group services such as virtual machines, databases, storage accounts, and networking components that belong to the same application, project, or environment. By using resource groups, you can apply access controls, policies, and tags consistently across all included resources, making security, governance, and cost management easier.: <br/>
-<img src="https://cdn.discordapp.com/attachments/1445251151896248323/1450287844521148488/Screenshot_2025-12-15_184238.png?ex=69698a4f&is=696838cf&hm=95ff66b46faae302b44eea9be645204f8c84a05d3e718d793384ece5f3d9ed0d" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+First,  I added a resource group to the subscription that has to be made to use Azure. Resource groups are a logical container used to organize and manage related cloud resources as a single unit. It allows administrators and developers to group services such as virtual machines, databases, storage accounts, and networking components that belong to the same application, project, or environment. By using resource groups, you can apply access controls, policies, and tags consistently across all included resources, making security, governance, and cost management easier: <br/>
+<img width="1273" height="1144" alt="Screenshot 2025-12-15 181738" src="https://github.com/user-attachments/assets/8cb82125-c5be-46f2-8796-3b78b34e124a" />
 <br />
 <br />
 A virtual network was configured and validated inside the resource group:  <br/>
-<img src="https://cdn.discordapp.com/attachments/1445251151896248323/1450290075014397964/Screenshot_2025-12-15_185332.png?ex=69698c62&is=69683ae2&hm=951166479b4ee0f9c43635965d38910416f1d34c8ed6d8fe403c5f188fbc7a12" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img width="1250" height="893" alt="Screenshot 2025-12-15 184238" src="https://github.com/user-attachments/assets/7d8df778-c40d-45a9-9bed-e5d4618eb09e" />
 <br />  
 <br />
 A Virtual machine is then created and deployed as "AIE-NET-WEST-1": <br/>
-<img src="https://cdn.discordapp.com/attachments/1445251151896248323/1450291367979782214/Screenshot_2025-12-15_183156.png?ex=69698d97&is=69683c17&hm=b61501ed00e3f65dfd31cf7995a413fd34427f42b879cb8a636933986c83d1ac&" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<img src="https://cdn.discordapp.com/attachments/1445251151896248323/1450291368487551209/Screenshot_2025-12-15_183233.png?ex=69698d97&is=69683c17&hm=a21870b8b36982528845f529a52d428e92d77d15ef4f7c480360c4c40557ed9e&" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img width="960" height="997" alt="Screenshot 2025-12-15 183233" src="https://github.com/user-attachments/assets/5b07919c-fa47-4782-b814-26d811ae011b" />
 <br />
 <br />
 Once the virtual machine was created, I configured the virtual network firewall to be turned off under a new inbound security rule. Destination port ranges will be changed to *, which indicates any range. Priority can be what number is available. I have already made this rule using 100, so here I used 110:  <br/>
-<img src="https://cdn.discordapp.com/attachments/1445251151896248323/1450300523789025351/Screenshot_2025-12-15_190057.png?ex=6969961e&is=6968449e&hm=8840a2379a21e2c94ea63cc1f33a0327f8b1253b70aff8d4543e6a814cc97d9a&" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<img src="https://cdn.discordapp.com/attachments/1445251151896248323/1450300524351066220/Screenshot_2025-12-15_190316.png?ex=6969961e&is=6968449e&hm=b6be7ebb44be158839b7f931669caf56bd43fdcf2cb4e2f3d9a942df093433b5&" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<img src="https://cdn.discordapp.com/attachments/1445251151896248323/1450300524858441800/Screenshot_2025-12-15_190601.png?ex=6969961e&is=6968449e&hm=808ae8c1ef12e3e70a7c4a51670ba85192237f37791872916c9526d7f47ec884&" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img width="1268" height="1012" alt="Screenshot 2025-12-15 190057" src="https://github.com/user-attachments/assets/97d419c1-6013-474d-ba1a-e74df51d9c85" />
+<img width="1271" height="815" alt="Screenshot 2025-12-15 190316" src="https://github.com/user-attachments/assets/c4cab39c-780d-4332-86ea-b851368668a3" />
+<img width="1243" height="1157" alt="Screenshot 2025-12-15 190601" src="https://github.com/user-attachments/assets/f5320232-707c-4cb8-9ea1-a8a6748e756e" />
 <br />
 <br />
 After the new inbound rule is configured in the virtual network, use Remote Desktop Connection to access the virtual machine via IP address. When you in the desktop, go to Windows Defender Firewall properties, turn all tabs off in that window:  <br/>
-<img src="https://cdn.discordapp.com/attachments/1445251151896248323/1450303046532993084/Screenshot_2025-12-15_194131.png?ex=69699877&is=696846f7&hm=51b4a16a46d8e421c0f179b01d78764f075c9099a483102c3cc8d9d4a94eeb51" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img width="1224" height="891" alt="Screenshot 2025-12-15 194131" src="https://github.com/user-attachments/assets/8cc5b3c8-2593-41f8-9312-d2aa1cbc9213" />
 <br />
          
 Now test the connection to make sure access is open to you and the public web. Open the command prompt and ping the virtual machine IP address. My subscription is past the 30-day trial period, which means my network is not turned on for my virtual machine, but if this is your first account, then your network should be accessible. You should have more than 0 received packets and less than 50% loss if your virtual network is on.:  <br/>
-<img src="https://cdn.discordapp.com/attachments/1445251151896248323/1450305633751400601/Screenshot_2025-12-15_195133.png?ex=69699ae0&is=69684960&hm=3b3c5895d1d9346a77fd85d0027226392432e21a3994aed0881c7f64d05b7094" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img width="1098" height="634" alt="Screenshot 2025-12-15 195133" src="https://github.com/user-attachments/assets/4cd1b2fe-6782-4bc7-b015-5fd749ddbd59" />
 <br />
 <br />
 Log analytics workspace is created  to collect data entries of potential attacks and will be linked to Microsoft Sentinel (SIEM tool) as a directory:  <br/>
-<img src="https://cdn.discordapp.com/attachments/1445251151896248323/1450309681598955633/Screenshot_2025-12-15_200844.png?ex=69699ea5&is=69684d25&hm=e4fbfb86b9cb7644b13900ec6e125d064c85a691964f98927dcf67388372f304&" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<img src="https://cdn.discordapp.com/attachments/1445251151896248323/1450309682215387166/Screenshot_2025-12-15_201138.png?ex=69699ea5&is=69684d25&hm=04d1e3bf6e976bbd4bfc2b2322a28d8a428d35fa85672aca6a6faac81c31147e&" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img width="1247" height="947" alt="Screenshot 2025-12-15 200844" src="https://github.com/user-attachments/assets/e079b481-8015-4d52-8f7a-712ded781f14" />
+<img width="1257" height="308" alt="Screenshot 2025-12-15 201138" src="https://github.com/user-attachments/assets/7e21c9c5-9112-4094-a932-c037cb095cba" />
 <br />
 <br />
 Once in Microsoft Sentinel, create a log space using data from your resource group that has your virtual machine:  <br/>
-<img src="https://cdn.discordapp.com/attachments/1445251151896248323/1450314148037791855/Screenshot_2025-12-15_202802.png?ex=6969a2ce&is=6968514e&hm=57cd8167cb79939b4da12e9b841406d6074591e5b31e7b67f35d50b19f5d286b" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img width="1202" height="661" alt="Screenshot 2025-12-15 202802" src="https://github.com/user-attachments/assets/aab92835-2889-4cac-891d-f12b442091ee" />
 <br />
 You can find KQL under the logs tab, where you can search all data within your virtual machine:  <br/>
-<img src="https://cdn.discordapp.com/attachments/1445251151896248323/1450315443272286268/Screenshot_2025-12-15_203454.png?ex=6969a403&is=69685283&hm=c60dec2194eb807ee3c5a8de6cc326691bd1deb441c633002eb5af2d046a0593" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img width="1262" height="1142" alt="Screenshot 2025-12-15 203454" src="https://github.com/user-attachments/assets/b440a827-d1b0-4bf6-9be5-34fb56fb2cc3" />
 <br />
 You will create a workbook with your KQL queries and input them to make a map of all attacks in the world:  <br/>
-<img src="https://cdn.discordapp.com/attachments/1445251151896248323/1450316287938134116/Screenshot_2025-12-15_203735.png?ex=6969a4cc&is=6968534c&hm=389482ea720bc63130e22d30d45fd4484fa04533246d7f7af078f91090c3bbaa" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-
+<img width="1044" height="616" alt="Screenshot 2025-12-15 203735" src="https://github.com/user-attachments/assets/c3942dee-972b-4333-a7ef-2a6ec785f669" />
 I added a map.json code that inputs all queries into a map to be easier to read and can be used for reports. This is the completed VM attack map worldwide within 24 hours of being open:  <br/>
-<img src="https://cdn.discordapp.com/attachments/1445251151896248323/1450321333782319135/Screenshot_2025-12-15_204207.png?ex=6969a97f&is=696857ff&hm=6ca6ca82bd1099abd1084c943b93ba3413b43face58987133a3101266b39fe9e&" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<img src="https://cdn.discordapp.com/attachments/1445251151896248323/1450321334373453855/Screenshot_2025-05-13_082456.png?ex=6969a97f&is=696857ff&hm=31de6b9d83a6962c2bca8978b9d5115e446b2168ba039b0a92f3a190965e8a60&" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<img src="https://cdn.discordapp.com/attachments/1445251151896248323/1450321334927233215/Screenshot_2025-05-13_083904.png?ex=6969a97f&is=696857ff&hm=78d7fb7777286c746a719d5ca73e39839903bec3ed1abd0f2b11e8e9faccd6f0&" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img width="1251" height="1012" alt="Screenshot 2025-12-15 204207" src="https://github.com/user-attachments/assets/6c7052bf-b586-4d6d-817e-2615fe9417ee" />
+<img width="2213" height="1157" alt="Screenshot 2025-05-12 184031" src="https://github.com/user-attachments/assets/614de90a-eaa5-4a8d-809b-f974544b318a" />
+<img width="1384" height="816" alt="Screenshot 2025-05-13 083904" src="https://github.com/user-attachments/assets/b86d4817-8bec-4cea-849b-f082853f9a15" />
+
 </p>
 
 <!--
